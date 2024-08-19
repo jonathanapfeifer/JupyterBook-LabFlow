@@ -1,0 +1,55 @@
+{
+  "name": "myjbook",
+  "displayName": "myjbook",
+  "description": "Functions to make jupyterbook notebook use easier",
+  "version": "0.1.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.importLocal",
+        "title": "MyJBook: Import Photo from Local Disk"
+      },
+      {
+        "command": "extension.newNotebookPage",
+        "title": "MyJBook: New Notebook Page"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.newNotebookPage",
+        "key": "ctrl+shift+alt+n",
+        "mac": "cmd+alt+shift+n",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@types/vscode": "^1.86.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "@vscode/test-electron": "^2.3.2",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.5.4"
+  }
+}
